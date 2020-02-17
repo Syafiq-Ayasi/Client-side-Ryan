@@ -2,15 +2,47 @@
 <html>
 <head>
     <title>Document</title>
-    <link rel="stylesheet" href="new style.css">
+    <link rel="stylesheet" href="Css.css">
 </head>
 <body>
-    <div id="header">
+    <div class="header" >
     <form>
         <input class="search" type="search" placeholder="search...">
     </form>
-    <div id="div-1">
-        <h1>1</h1>
+    <div class="nav">
+        <ul>
+    <li><a href="#">Home</b></a></li>
+    <li><a href="#">About Me</a></li>
+    <li><a href="#">Chat Room</a></li>
+    <button onclick="document.getElementById('id01').style.display='block'";>Login</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content" >
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+    </ul>
+    </div>
+    <div class="frame-1">
         <button type="button" onclick="myFunction()">Click here</button>
 
         <p id="demo">This is the price</p>
@@ -20,35 +52,65 @@
           document.getElementById("demo").innerHTML = "Rp.120.000.00,-";
         }
       </script>
+        <img src="gambar1.png" alt="gambar1">
+       
     </div>
-    <div id="div-2">
-        <h1>2</h1>
+    <div class="frame-2">
+        <img class="div-2" src="gambar2.jpg" alt="gambar2" style="width: 100%;">
+        <img class="div-2" src="gambar3.jpg" alt="gambar3" style="width: 100%;">
+        <img class="div-2" src="gambar4.png" alt="gambar4" style="width: 100%;">
+</div>
     </div>
-    <div id="div-3">
-        <h1>3</h1>
+    <div class="frame-3">
+        <img src="gambar3.jpg" alt="gambar3">
     </div>
-    <div id="div-4">
-        <h1>4</h1>
+    <div class="frame-4">
+        <img src="gambar4.png" alt="gambar4">
     </div>
-    <div id="div-5">
-        <h1>5</h1>
+    <div class="frame-5">
+        <img src="gambar5.jpg" alt="gambar5">
     </div>
-    <div id="div-6">
-        <h1>6</h1>
+    <div class="frame-6">
+        <img src="gambar6.jpg" alt="gambar6">
     </div>
-    <div id="div-7">
-        <h1>7</h1>
+    <div class="frame-7">
+        <img src="gambar7.jpg" alt="gambar7">
+    </div>
+    <div class="footer">
+     &copy;
+
     </div>
 
   </div>
-
-    <script src="javascript.js"></script>
-
-    <button type="button"
-    onclick="document.getElementById('dome').innerHTML = Date()">
-    Click me to display Date and Time.</button>
-
-    <p id="dome"></p>
+  <script>
+    
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("div-2");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+    </script>
+  <script src="javascript.js"></script>
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
 
 </body>
 </html>
